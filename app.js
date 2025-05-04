@@ -9,6 +9,10 @@ class Despesa {
     }
 }
 
+class DB {
+    
+}
+
 function cadastrarDespesa() {
     let ano = document.getElementById('ano');
     let mes = document.getElementById('mes');
