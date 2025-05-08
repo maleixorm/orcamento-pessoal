@@ -34,7 +34,7 @@ class Bd {
     
     gravar(d) {
         let id = this.getProximoId();
-        localStorage.setItem('id', JSON.stringify(d));
+        localStorage.setItem(id, JSON.stringify(d));
         localStorage.setItem('id', id);
     }
 }
@@ -60,8 +60,10 @@ function cadastrarDespesa() {
 
     if(despesa.validarDados()) {
         bd.gravar(despesa);
-
+        // dialog de sucesso
+        $('#sucessoGravacao').modal('show');
     } else {
-
+        // dialog de erro
+        $('#erroGravacao').modal('show');
     }
 }
