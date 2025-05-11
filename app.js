@@ -39,11 +39,16 @@ class Bd {
     }
 
     recuperarTodosRegistros() {
+        let despesas = [];
         let id = localStorage.getItem('id');
-        for (let i = 0; i <= id; i++) {
+        for (let i = 1; i <= id; i++) {
             let despesa = JSON.parse(localStorage.getItem(i));
-            console.log(i, despesa);
+            if (despesa === null) {
+                continue;
+            }
+            despesas.push(despesa);
         }
+        return despesas;
     }
 }
 
@@ -87,5 +92,7 @@ function cadastrarDespesa() {
 }
 
 function carregaListaDespesas() {
-    bd.recuperarTodosRegistros()
+    let despesas = [];
+    despesas = bd.recuperarTodosRegistros();
+    console.log(despesas);
 }
