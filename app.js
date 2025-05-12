@@ -80,6 +80,13 @@ function cadastrarDespesa() {
         document.getElementById('modal_btn').className = "btn btn-success";
         // dialog de sucesso
         $('#modalRegistraDespesa').modal('show');
+        // limpando os campos do formulário após cadastro com sucesso
+        ano.value = '';
+        mes.value = '';
+        dia.value = '';
+        tipo.value = '';
+        descricao.value = '';
+        valor.value = '';
     } else {
         document.getElementById('modal_titulo').innerHTML = 'Erro no cadastro do registro';
         document.getElementById('modal_titulo_div').className = "modal-header text-danger";
